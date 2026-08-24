@@ -1,6 +1,6 @@
 # commitlint-lite
 
-<img src="docs/logo.svg" alt="commitlint-lite mark" width="88" height="88">
+<img src="docs/logo.svg" alt="commitlint-lite mark" width="96" height="96">
 
 **Require commit subjects matching feat|fix|docs|chore|refactor|test|ci with an optional scope.**
 
@@ -11,6 +11,8 @@
 ![release 1.00](https://img.shields.io/github/v/release/theworker02/commitlint-lite?display_name=release)
 
 Package version **1.00** (`1.0.0`). Default branch is **`main`** — never `master`.
+
+**Docs:** [GitHub Pages](https://theworker02.github.io/commitlint-lite/) · **Source:** [`theworker02/commitlint-lite`](https://github.com/theworker02/commitlint-lite) · **Release 1.00:** [`v1.0.0`](https://github.com/theworker02/commitlint-lite/releases/tag/v1.0.0)
 
 ## Why it exists
 
