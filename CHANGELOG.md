@@ -1,5 +1,10 @@
 # Changelog
 
+All notable changes to **commitlint-lite** are documented here.
+
 ## 1.00 — 2026-08-23
 
-- Initial public release (1.00 / 1.0.0): Conventional commit lint.
+- Initial public release (**1.00** / `1.0.0`).
+- CLI with `--help` and `--version`.
+- Product documentation and GitHub Pages site on `main` / `/docs`.
+- Lint conventional commit subjects without extra plugins.

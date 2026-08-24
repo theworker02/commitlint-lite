@@ -3,29 +3,89 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>commitlint-lite 1.00</title>
+  <title>commitlint-lite  · 1.00</title>
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-  <header>
-    <div class="wrap brand">
-      <img src="logo.svg" alt="commitlint-lite mark">
-      <div>
-        <h1>commitlint-lite</h1>
-        <p class="tag">Conventional commit lint · version 1.00</p>
+  <nav class="nav sans">
+    <a class="brand-lockup" href="index.html"><img src="logo.svg" alt=""> commitlint-lite</a>
+    <div class="links">
+      <a href="index.html#overview">Overview</a>
+      <a href="index.html#install">Install</a>
+      <a href="usage.html">Usage</a>
+      <a href="index.html#examples">Examples</a>
+    </div>
+  </nav>
+  
+  <header class="hero">
+    <img src="logo.svg" alt="commitlint-lite mark">
+    <div>
+      <p class="kicker sans">theworker02 · version 1.00</p>
+      <h1>commitlint-lite</h1>
+      <p class="lede">Require commit subjects matching feat|fix|docs|chore|refactor|test|ci with an optional scope.</p>
+      <div class="badges sans">
+        <span class="badge">1.00 / 1.0.0</span>
+        <span class="badge">branch main</span>
+        <span class="badge">MIT</span>
+        <span class="badge">Node.js >= 18</span>
       </div>
     </div>
   </header>
-  <main class="wrap">
-    <section class="card">
-      <h2>Purpose</h2>
-      <p>Read a commit message file or argv and require a conventional subject: feat|fix|docs|chore|refactor|test|ci, optional scope, then a description.</p>
-      <h2>Install</h2>
-      <pre><code>npm install -g commitlint-lite</code></pre>
-      <h2>Usage</h2>
-      <pre><code>commitlint-lite feat:</code></pre>
+  <div class="wrap">
+    <section id="overview">
+      <h2>Overview</h2>
+      <p>Full commitlint stacks are heavy for tiny repos. commitlint-lite is one regex and a clear exit code you can drop into a git hook.</p>
+      <p>Solo maintainers and small teams who already use conventional commits and want a portable checker.</p>
     </section>
-    <footer>MIT © 2026 theworker02 · version 1.00 (1.0.0) · navy #0B1F33 · gold #C9A227</footer>
-  </main>
+    <section id="install">
+      <h2>Install</h2>
+      <p>Install globally from Git, or run with Node from a clone. There are no extra dependencies.</p>
+      <pre><code>npm install -g git+https://github.com/theworker02/commitlint-lite.git
+commitlint-lite --help
+node src/cli.js --help</code></pre>
+    </section>
+    <section id="usage">
+      <h2>Usage</h2>
+      <p>Synopsis: <code>commitlint-lite [options] &lt;file-or-message&gt;</code></p>
+      <p>See the <a href="usage.html">full CLI reference</a> for every flag, exit code, and example.</p>
+      <pre><code>commitlint-lite 1.00 (1.0.0)
+
+Usage:
+  commitlint-lite [options] &lt;file-or-message&gt;
+
+Require a conventional subject:
+  ^(feat|fix|docs|chore|refactor|test|ci)(\(.+\))?: .+
+
+Options:
+  -h, --help       Show this help
+  -v, --version    Print 1.0.0
+
+If a single argument is a path that exists, the file is read
+(first non-empty, non-# line). Otherwise all arguments are the message.
+
+Examples:
+  commitlint-lite "feat: add scan"
+  commitlint-lite .git/COMMIT_EDITMSG</code></pre>
+    </section>
+    <section id="examples">
+      <h2>Examples</h2>
+      <div class="grid-2">
+        <div>
+          <h3 class="ok">Success</h3>
+          <pre><code>commitlint-lite "fix(cli): handle empty stdin"</code></pre><pre><code>{"ok":true,"subject":"fix(cli): handle empty stdin"}</code></pre>
+        </div>
+        <div>
+          <h3 class="fail">Failure</h3>
+          <pre><code>commitlint-lite "WIP"</code></pre><pre><code>{"ok":false,"subject":"WIP"}</code></pre><p>Exit code is 1.</p>
+        </div>
+      </div>
+    </section>
+  </div>
+  <footer class="sans">
+    MIT © 2026 theworker02 · version <strong>1.00</strong> (<code>1.0.0</code>) ·
+    navy <code>#0B1F33</code> · gold <code>#C9A227</code> ·
+    <a href="https://github.com/theworker02/commitlint-lite">GitHub</a> ·
+    <a href="https://thanks.dev/u/gh/theworker02">thanks.dev</a>
+  </footer>
 </body>
 </html>

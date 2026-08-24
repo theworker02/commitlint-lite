@@ -1,7 +1,7 @@
 {
   "name": "commitlint-lite",
   "version": "1.0.0",
-  "description": "Lint conventional commit subjects: feat|fix|docs|chore|refactor|test|ci.",
+  "description": "Require commit subjects matching feat|fix|docs|chore|refactor|test|ci with an optional scope.",
   "bin": {
     "commitlint-lite": "./src/cli.js"
   },
@@ -12,5 +12,25 @@
   "license": "MIT",
   "engines": {
     "node": ">=18"
-  }
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/theworker02/commitlint-lite.git"
+  },
+  "homepage": "https://theworker02.github.io/commitlint-lite/",
+  "bugs": {
+    "url": "https://github.com/theworker02/commitlint-lite/issues"
+  },
+  "files": [
+    "src",
+    "docs",
+    "LICENSE",
+    "README.md"
+  ],
+  "keywords": [
+    "commitlint",
+    "conventional-commits",
+    "git",
+    "cli"
+  ]
 }
