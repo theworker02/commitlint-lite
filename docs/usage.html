@@ -30,27 +30,57 @@
   <div class="wrap">
     <section>
       <h2>Synopsis</h2>
-      <pre><code>commitlint-lite [options] &lt;file-or-message&gt;</code></pre>
-      <div class="callout sans"><strong>Tip:</strong> <code>commitlint-lite --help</code> prints this text in the terminal. <code>commitlint-lite --version</code> prints <code>1.0.0</code>.</div>
+      <pre><code>commitlint-lite 1.00 (1.0.0)
+
+Usage:
+  commitlint-lite [options] [message...]
+  commitlint-lite [options] --file &lt;path&gt;
+  commitlint-lite [options]
+
+Lint a conventional commit subject:
+  type(scope)?: description
+
+Default types: feat, fix, docs, chore, refactor, test, ci
+
+If no message and no --file are given, the subject of `git log -1` is linted.
+
+Options:
+  -h, --help         Show this help and exit 0
+  -V, -v, --version  Print 1.0.0 and exit 0
+  --json             JSON result {ok, subject, types, reason}
+  --file &lt;path&gt;      Read a commit message file (skips # comment lines)
+  --types &lt;list&gt;     Extra types, comma-separated (e.g. build,revert)
+
+Exit codes:
+  0  subject matches
+  1  subject does not match, missing git commit, or unknown option
+
+Examples:
+  commitlint-lite "feat: add scan"
+  commitlint-lite --file .git/COMMIT_EDITMSG
+  commitlint-lite --types build,revert "build: bump deps"
+  commitlint-lite</code></pre>
+      <div class="callout sans"><strong>Tip:</strong> <code>commitlint-lite --help</code> and <code>-h</code> print this text. <code>commitlint-lite --version</code> and <code>-V</code> print <code>1.0.0</code>.</div>
     </section>
     <section>
       <h2>Flags and arguments</h2>
-      <table class="sans"><thead><tr><th>Flag / argument</th><th>Meaning</th></tr></thead><tbody><tr><td><code>-h, --help</code></td><td>Print detailed usage and exit 0.</td></tr><tr><td><code>-v, --version</code></td><td>Print 1.0.0 and exit 0.</td></tr><tr><td><code>&lt;file-or-message&gt;</code></td><td>If a single existing file path is given, lint its first non-comment line. Otherwise join argv as the subject.</td></tr></tbody></table>
+      <p>The complete flag list is in <code>commitlint-lite --help</code> (shown above). Human output is the default; pass <code>--json</code> where supported.</p>
     </section>
     <section>
       <h2>Exit codes</h2>
-      <table class="sans"><thead><tr><th>Code</th><th>Meaning</th></tr></thead><tbody><tr><td><code>0</code></td><td>Subject matches.</td></tr><tr><td><code>1</code></td><td>No argument, or subject does not match.</td></tr></tbody></table>
+      <table class="sans"><thead><tr><th>Code</th><th>Meaning</th></tr></thead><tbody><tr><td><code>0</code></td><td>Subject matches.</td></tr><tr><td><code>1</code></td><td>Subject does not match, missing git commit, or unknown option.</td></tr></tbody></table>
     </section>
     <section>
       <h2>Configuration</h2>
-      <p>Pattern: /^(feat|fix|docs|chore|refactor|test|ci)(\(.+\))?: .+/  Comment lines starting with # are skipped (COMMIT_EDITMSG friendly). No config file.</p>
+      <p>Default types: feat, fix, docs, chore, refactor, test, ci. Add more with `--types`. With no args, lints `git log -1`.</p>
     </section>
     <section id="examples">
       <h2>Worked examples</h2>
       <h3 class="ok">Success path</h3>
-      <pre><code>commitlint-lite "fix(cli): handle empty stdin"</code></pre><pre><code>{"ok":true,"subject":"fix(cli): handle empty stdin"}</code></pre>
+      <p>A conventional subject passes.</p><pre><code>commitlint-lite "feat: add scan"</code></pre><pre><code>OK  feat: add scan</code></pre>
       <h3 class="fail">Failure path</h3>
-      <pre><code>commitlint-lite "WIP"</code></pre><pre><code>{"ok":false,"subject":"WIP"}</code></pre><p>Exit code is 1.</p>
+      <p>A non-conventional subject fails.</p><pre><code>commitlint-lite WIP</code></pre><pre><code>FAIL  WIP
+subject does not match conventional pattern</code></pre><p>Exit code is 1.</p>
     </section>
   </div>
   <footer class="sans">

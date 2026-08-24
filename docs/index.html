@@ -42,9 +42,36 @@
     <section id="install">
       <h2>Install</h2>
       <p>Install globally from Git, or run with Node from a clone. There are no extra dependencies.</p>
-      <pre><code>npm install -g git+https://github.com/theworker02/commitlint-lite.git
-commitlint-lite --help
-node src/cli.js --help</code></pre>
+      <pre><code>commitlint-lite 1.00 (1.0.0)
+
+Usage:
+  commitlint-lite [options] [message...]
+  commitlint-lite [options] --file &lt;path&gt;
+  commitlint-lite [options]
+
+Lint a conventional commit subject:
+  type(scope)?: description
+
+Default types: feat, fix, docs, chore, refactor, test, ci
+
+If no message and no --file are given, the subject of `git log -1` is linted.
+
+Options:
+  -h, --help         Show this help and exit 0
+  -V, -v, --version  Print 1.0.0 and exit 0
+  --json             JSON result {ok, subject, types, reason}
+  --file &lt;path&gt;      Read a commit message file (skips # comment lines)
+  --types &lt;list&gt;     Extra types, comma-separated (e.g. build,revert)
+
+Exit codes:
+  0  subject matches
+  1  subject does not match, missing git commit, or unknown option
+
+Examples:
+  commitlint-lite "feat: add scan"
+  commitlint-lite --file .git/COMMIT_EDITMSG
+  commitlint-lite --types build,revert "build: bump deps"
+  commitlint-lite</code></pre>
     </section>
     <section id="usage">
       <h2>Usage</h2>
@@ -74,11 +101,12 @@ Examples:
       <div class="grid-2">
         <div>
           <h3 class="ok">Success</h3>
-          <pre><code>commitlint-lite "fix(cli): handle empty stdin"</code></pre><pre><code>{"ok":true,"subject":"fix(cli): handle empty stdin"}</code></pre>
+          <p>A conventional subject passes.</p><pre><code>commitlint-lite "feat: add scan"</code></pre><pre><code>OK  feat: add scan</code></pre>
         </div>
         <div>
           <h3 class="fail">Failure</h3>
-          <pre><code>commitlint-lite "WIP"</code></pre><pre><code>{"ok":false,"subject":"WIP"}</code></pre><p>Exit code is 1.</p>
+          <p>A non-conventional subject fails.</p><pre><code>commitlint-lite WIP</code></pre><pre><code>FAIL  WIP
+subject does not match conventional pattern</code></pre><p>Exit code is 1.</p>
         </div>
       </div>
     </section>
