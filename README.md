@@ -1,5 +1,13 @@
 # commitlint-lite
 
+
+---
+
+## License & acquisition
+
+This project is **proprietary**. Production use, redistribution, and commercial deployment require a written commercial license or completed acquisition. See [LICENSE](./LICENSE) and [ACQUISITION.md](./ACQUISITION.md). Contact [@theworker02](https://github.com/theworker02).
+
+
 <img src="docs/logo.svg" alt="commitlint-lite mark" width="96" height="96">
 
 **Validate conventional commit subjects with a tiny configurable rule set and a documented programmatic API.**
@@ -8,7 +16,7 @@
 ![version 1.1.0](https://img.shields.io/badge/version-1.1.0-C9A227?labelColor=0B1F33)
 ![license MIT](https://img.shields.io/badge/license-MIT-0B1F33)
 
-**Package:** [`@theworker02/commitlint-lite`](https://jsr.io/@theworker02/commitlint-lite) · **Site:** [GitHub Pages](https://theworker02.github.io/commitlint-lite/) · **Source:** [`theworker02/commitlint-lite`](https://github.com/theworker02/commitlint-lite)
+**Package:** [`@theworker02/commitlint-lite`](https://jsr.io/@theworker02/commitlint-lite) Â· **Site:** [GitHub Pages](https://theworker02.github.io/commitlint-lite/) Â· **Source:** [`theworker02/commitlint-lite`](https://github.com/theworker02/commitlint-lite)
 
 ## Add from JSR
 
@@ -26,13 +34,13 @@ console.log(DEFAULT_TYPES);
 
 ## Public API
 
-- `lint(message, options)` — lint one commit message.
-- `lintMany(messages, options)` — lint a collection.
-- `lintFile(path, options)` — read and lint a commit-message file.
-- `lastGitCommit(cwd)` — read the latest Git commit message.
-- `subjectFrom(text)` — extract the subject line.
-- `patternFor(types)` — build the validation expression.
-- `DEFAULT_TYPES`, `PACKAGE`, `LintOptions`, `LintResult` — documented symbols and types.
+- `lint(message, options)` â€” lint one commit message.
+- `lintMany(messages, options)` â€” lint a collection.
+- `lintFile(path, options)` â€” read and lint a commit-message file.
+- `lastGitCommit(cwd)` â€” read the latest Git commit message.
+- `subjectFrom(text)` â€” extract the subject line.
+- `patternFor(types)` â€” build the validation expression.
+- `DEFAULT_TYPES`, `PACKAGE`, `LintOptions`, `LintResult` â€” documented symbols and types.
 
 ## CLI from source
 
@@ -54,4 +62,4 @@ The canonical public package is JSR `@theworker02/commitlint-lite`, published th
 
 ## License
 
-[MIT](LICENSE) © 2026 theworker02
+[MIT](LICENSE) Â© 2026 theworker02
