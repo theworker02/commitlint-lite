@@ -16,7 +16,7 @@ This project is **proprietary**. Production use, redistribution, and commercial 
 ![version 1.1.0](https://img.shields.io/badge/version-1.1.0-C9A227?labelColor=0B1F33)
 ![license MIT](https://img.shields.io/badge/license-MIT-0B1F33)
 
-**Package:** [`@theworker02/commitlint-lite`](https://jsr.io/@theworker02/commitlint-lite) Â· **Site:** [GitHub Pages](https://theworker02.github.io/commitlint-lite/) Â· **Source:** [`theworker02/commitlint-lite`](https://github.com/theworker02/commitlint-lite)
+**Package:** [`@theworker02/commitlint-lite`](https://jsr.io/@theworker02/commitlint-lite) Ã‚Â· **Site:** [GitHub Pages](https://theworker02.github.io/commitlint-lite/) Ã‚Â· **Source:** [`theworker02/commitlint-lite`](https://github.com/theworker02/commitlint-lite)
 
 ## Add from JSR
 
@@ -34,13 +34,13 @@ console.log(DEFAULT_TYPES);
 
 ## Public API
 
-- `lint(message, options)` â€” lint one commit message.
-- `lintMany(messages, options)` â€” lint a collection.
-- `lintFile(path, options)` â€” read and lint a commit-message file.
-- `lastGitCommit(cwd)` â€” read the latest Git commit message.
-- `subjectFrom(text)` â€” extract the subject line.
-- `patternFor(types)` â€” build the validation expression.
-- `DEFAULT_TYPES`, `PACKAGE`, `LintOptions`, `LintResult` â€” documented symbols and types.
+- `lint(message, options)` Ã¢â‚¬â€ lint one commit message.
+- `lintMany(messages, options)` Ã¢â‚¬â€ lint a collection.
+- `lintFile(path, options)` Ã¢â‚¬â€ read and lint a commit-message file.
+- `lastGitCommit(cwd)` Ã¢â‚¬â€ read the latest Git commit message.
+- `subjectFrom(text)` Ã¢â‚¬â€ extract the subject line.
+- `patternFor(types)` Ã¢â‚¬â€ build the validation expression.
+- `DEFAULT_TYPES`, `PACKAGE`, `LintOptions`, `LintResult` Ã¢â‚¬â€ documented symbols and types.
 
 ## CLI from source
 
@@ -62,4 +62,8 @@ The canonical public package is JSR `@theworker02/commitlint-lite`, published th
 
 ## License
 
-[MIT](LICENSE) Â© 2026 theworker02
+[MIT](LICENSE) Ã‚Â© 2026 theworker02
+
+## Status
+
+commitlint-lite is actively packaged for commercial licensing and acquisition diligence. See [ACQUISITION.md](./ACQUISITION.md) and [docs/acquisition/](./docs/acquisition/).
